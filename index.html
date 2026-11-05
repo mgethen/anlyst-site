@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Anlyst | The intelligence and memory layer for deal work</title>
+<meta name="description" content="Anlyst reads every deal document once, extracts and verifies the facts, and gives the whole deal team a memory that compounds. Built for M&A advisory firms and investors. Weeks back on every deal, a head start every day.">
+<link rel="canonical" href="https://www.anlyst.co/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anlyst | Weeks back on every deal. A head start every day.">
+<meta property="og:description" content="The intelligence and memory layer for M&A and investment deal work. In market sooner, closed sooner.">
+<meta property="og:url" content="https://www.anlyst.co/">
+<meta property="og:image" content="https://www.anlyst.co/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wdth,wght@75,500..700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Anlyst Global Intelligence Pte Ltd","alternateName":"Anlyst","url":"https://www.anlyst.co/","logo":"https://www.anlyst.co/img/logo-dark.png","description":"The intelligence and memory layer for M&A and investment deal work.","email":"m@anlyst.co","foundingLocation":"Singapore","areaServed":"Worldwide","founder":{"@type":"Person","name":"Michael Gethen"}}
+</script>
+<style>
+/* Layout: one long page in the deck's rhythm. Cream and dark bands alternate; the hero is the deck cover at full bleed.
+   Headings in the condensed headline face, body in the serif, labels in spaced caps. One accent, the plum, used as the deck uses it. */
+:root{
+  --cream:#EDF0DF; --dark:#33363D; --ink:#353638; --ink2:#5E6063; --plum:#6E3F4F; --pink:#D4A3B1; --muted:#C9CDBA; --rule:#D5D9C6; --rule-dark:#4A4D55; --white:#FFFFFF;
+  --head:"Mozilla Headline","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Noto Serif",Georgia,"Times New Roman",serif;
+  --bg:var(--cream); --fg:var(--ink);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.head{font-family:var(--head);font-stretch:75%;font-weight:700;line-height:1.05;margin:0;text-wrap:balance}
+.label{font-family:var(--head);font-stretch:75%;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--plum)}
+.dark .label{color:var(--pink)}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+@media (max-width:600px){.wrap{width:min(1180px,100% - 32px)}}
+section{padding-block:96px}
+@media (max-width:700px){section{padding-block:64px}}
+.dark{background:var(--dark);color:var(--cream)}
+.dark .sub{color:var(--muted)}
+.sub{color:var(--ink2);font-size:1.15rem;max-width:62ch;margin:0}
+h2{font-size:clamp(2rem,4.2vw,3.1rem);max-width:22ch}
+h2 em{font-style:normal;color:var(--plum)}
+.dark h2 em{color:var(--pink)}
+.stack{display:grid;gap:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-stretch:75%;font-weight:700;font-size:1rem;letter-spacing:.04em;padding:14px 22px;border-radius:999px;text-decoration:none;border:1.5px solid currentColor;transition:background .2s,color .2s}
+.btn.solid{background:var(--plum);border-color:var(--plum);color:#fff}
+.btn.solid:hover{background:#5a3240;border-color:#5a3240}
+.btn.ghost:hover{background:rgba(110,63,79,.08)}
+.dark .btn.ghost{color:var(--cream)}
+.dark .btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(51,54,61,.92);backdrop-filter:blur(8px);color:var(--cream)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
+header img{height:26px;width:auto}
+nav{display:flex;gap:26px;align-items:center}
+nav a{font-family:var(--head);font-stretch:75%;font-weight:600;font-size:.95rem;letter-spacing:.04em;text-decoration:none;color:var(--muted)}
+nav a:hover{color:#fff}
+nav .btn{padding:9px 16px;font-size:.9rem}
+@media (max-width:760px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;background:var(--dark) url("img/hero.jpg") center/cover no-repeat;color:var(--cream);padding-block:0}
+.hero .wrap{min-height:min(78vh,760px);display:flex;flex-direction:column;justify-content:flex-end;padding-block:72px 56px}
+.hero p.pos{font-size:1.15rem;color:var(--cream);margin:0 0 auto;max-width:60ch}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5.2rem);margin-top:40vh}
+.hero h1 span{display:block}
+.hero h1 .pink{color:var(--pink)}
+.hero .intro{font-size:1.15rem;margin:22px 0 0;max-width:60ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+@media (max-width:700px){.hero h1{margin-top:34vh}.hero .wrap{min-height:min(88vh,760px)}}
+
+/* three-up */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+@media (max-width:860px){.three{grid-template-columns:1fr;gap:32px}}
+.item .num{font-family:var(--head);font-stretch:75%;font-weight:700;color:var(--plum);font-size:.85rem;letter-spacing:.1em}
+.dark .item .num{color:var(--pink)}
+.item h3{font-size:1.45rem;margin:8px 0 10px}
+.item p{margin:0;color:var(--ink2);max-width:40ch}
+.dark .item p{color:var(--muted)}
+
+/* bottom line */
+.bottom{margin-top:64px;padding-top:28px;border-top:1px solid var(--rule)}
+.dark .bottom{border-top-color:var(--rule-dark)}
+.bottom .label{display:block;margin-bottom:8px}
+.bottom p{font-family:var(--head);font-stretch:75%;font-weight:700;font-size:1.45rem;line-height:1.2;margin:0;max-width:44ch}
+
+/* two column with image */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start;margin-top:56px}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.photo{border-radius:14px;overflow:hidden;aspect-ratio:16/10;max-width:100%}
+.photo img{width:100%;height:100%;object-fit:cover}
+.consequence{margin-top:22px}
+.consequence p{font-family:var(--head);font-stretch:75%;font-weight:700;font-size:1.5rem;line-height:1.2;margin:6px 0 0;max-width:30ch}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--white);border-radius:14px;padding:30px 28px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card h3{font-size:1.9rem;color:var(--plum)}
+.card p{margin:0;color:var(--ink2)}
+.card .tag{margin-top:auto;padding-top:10px}
+.card.plum{background:var(--plum);color:#fff}
+.card.plum h3{color:#fff}
+.card.plum p{color:#F3E6EA}
+.card.plum .tag{color:#F3E6EA}
+
+/* proof */
+.proof{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:18px;margin-top:48px;align-items:stretch}
+@media (max-width:960px){.proof{grid-template-columns:1fr 1fr}.proof .photo{grid-column:1/-1;aspect-ratio:16/9}}
+@media (max-width:620px){.proof{grid-template-columns:1fr}}
+.col{background:var(--white);border-radius:14px;padding:26px 26px 22px;min-width:0}
+.col.plum{background:var(--plum);color:#fff}
+.col ol{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+.col li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:baseline}
+.col li b{font-family:var(--head);font-stretch:75%;font-size:.8rem;letter-spacing:.08em;color:var(--plum)}
+.col.plum li b{color:var(--pink)}
+.col .result{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--head);font-stretch:75%;font-weight:700;font-size:1.1rem}
+.col.plum .result{border-top-color:rgba(255,255,255,.3)}
+.col .label.white{color:#F3E6EA}
+
+/* venn */
+.venn{position:relative;width:min(100%,440px);aspect-ratio:1/0.92;margin-inline:auto}
+.venn .c{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:rgba(110,63,79,.55);border:1.5px solid var(--pink);display:flex;align-items:flex-start;justify-content:center;font-family:var(--head);font-stretch:75%;font-weight:700;text-align:center;font-size:.95rem;line-height:1.15;padding-top:14%}
+.venn .c1{left:19%;top:0}
+.venn .c2{left:0;top:36%;align-items:flex-end;padding:0 0 16% 0}
+.venn .c3{right:0;top:36%;align-items:flex-end;padding:0 0 16% 0}
+.venn .pill{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);background:var(--cream);border-radius:999px;padding:10px 26px}
+.venn .pill img{height:22px}
+
+/* trust table */
+.rows{margin-top:48px;border-top:1px solid var(--rule)}
+.rows div{display:grid;grid-template-columns:40px 180px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+@media (max-width:700px){.rows div{grid-template-columns:40px 1fr}.rows div p{grid-column:2}}
+.rows b{font-family:var(--head);font-stretch:75%;font-size:.8rem;letter-spacing:.08em;color:var(--plum)}
+.rows h3{font-size:1.25rem}
+.rows p{margin:0;color:var(--ink2);max-width:62ch}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:56px;position:relative}
+.timeline:before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--rule)}
+@media (max-width:860px){.timeline{grid-template-columns:1fr}.timeline:before{display:none}}
+.timeline .dot{width:19px;height:19px;border-radius:50%;border:2px solid var(--plum);background:var(--cream);position:relative}
+.timeline .dot.on{background:var(--plum)}
+.timeline h3{font-size:1.35rem;margin:22px 0 10px}
+.timeline ul{margin:0;padding-left:18px;color:var(--ink2)}
+.timeline li+li{margin-top:8px}
+
+/* whitepaper + forms */
+.paper{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:48px}
+@media (max-width:900px){.paper{grid-template-columns:1fr}}
+.cover{background:var(--plum);color:#fff;border-radius:14px;padding:36px;aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:space-between;max-width:100%}
+.cover .t{font-family:var(--head);font-stretch:75%;font-weight:700;font-size:1.9rem;line-height:1.1}
+.cover small{color:#F3E6EA;font-size:.9rem}
+form{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.f2{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-family:var(--head);font-stretch:75%;font-weight:600;font-size:.9rem;letter-spacing:.03em;min-width:0}
+input,select,textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);width:100%;min-width:0}
+.dark input,.dark select,.dark textarea{background:#3E424A;border-color:var(--rule-dark);color:var(--cream)}
+textarea{min-height:110px;resize:vertical}
+.note{font-size:.85rem;color:var(--ink2);margin:0}
+.dark .note{color:var(--muted)}
+.ok{display:none;padding:18px 20px;border-radius:10px;background:rgba(110,63,79,.1);border:1px solid var(--plum)}
+.dark .ok{background:rgba(212,163,177,.12);border-color:var(--pink)}
+.ok.show{display:block}
+
+footer{background:var(--dark);color:var(--muted);padding-block:48px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+@media (max-width:700px){footer .wrap{grid-template-columns:1fr}}
+footer img{height:30px;margin-bottom:14px}
+footer a{text-decoration:none;color:var(--cream)}
+footer .links{display:flex;flex-wrap:wrap;gap:18px}
+/* lifecycle */
+.life{margin-top:48px}
+.life svg{width:100%;height:auto;display:block}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:0;border-top:1px solid var(--rule)}
+.stages > div{padding:18px 16px 22px 0;border-right:1px solid var(--rule);min-width:0}
+.stages > div:last-child{border-right:0}
+.stages > div + div{padding-left:16px}
+.stages .num{font-family:var(--head);font-stretch:75%;font-weight:700;color:var(--plum);font-size:.8rem;letter-spacing:.1em}
+.stages h3{font-size:1.1rem;margin:4px 0 2px}
+.stages .t{font-size:.9rem;color:var(--ink2);margin:0}
+.stages .t b{font-weight:600;color:var(--plum)}
+.stages ul{list-style:none;margin:12px 0 0;padding:0;font-size:.92rem;color:var(--ink2);display:grid;gap:6px}
+.stages li{padding-left:16px;position:relative}
+.stages li:before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--plum)}
+.stages li.s:before{background:var(--cream);border:1.5px solid var(--plum);width:6px;height:6px}
+@media (max-width:900px){.stages{grid-template-columns:1fr 1fr}.stages > div{border-right:0;border-bottom:1px solid var(--rule);padding-left:0}.stages > div + div{padding-left:0}}
+@media (max-width:560px){.stages{grid-template-columns:1fr}}
+@media (max-width:700px){.life svg .tg{font-size:22px}.life svg .pl{display:none}}
+.daily{margin-top:0;background:var(--plum);color:#fff;border-radius:8px;padding:10px 16px;font-size:.9rem}
+.daily b{font-family:var(--head);font-stretch:75%;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;margin-right:10px}
+.ok.err{border-color:#B04A4A;background:rgba(176,74,74,.08)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.privacy{font-size:.95rem;color:var(--ink2);max-width:70ch}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="#top" aria-label="Anlyst home"><img src="img/logo-light.png" alt="Anlyst"></a>
+    <nav>
+      <a href="#problem">The problem</a>
+      <a href="#what">What Anlyst is</a>
+      <a href="#proof">Proof</a>
+      <a href="#trust">Trust</a>
+      <a href="#whitepaper">Whitepaper</a>
+      <a class="btn ghost" href="#contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="pos">Anlyst is the intelligence and memory layer for M&amp;A and investment deal work.</p>
+    <h1><span>Weeks back on every deal.</span><span class="pink">A head start every day.</span></h1>
+    <p class="intro">Every deal document read once. Every work product built from the same verified facts. And a firm that remembers.</p>
+    <div class="cta">
+      <a class="btn solid" href="#contact">Talk to us</a>
+      <a class="btn ghost" href="#whitepaper">Read the whitepaper</a>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <span class="label">The problem</span>
+    <h2 style="margin-top:14px">Nobody can say what they think about a deal until an analyst has spent <em>a week moving numbers around.</em></h2>
+    <div class="split">
+      <div class="stack" style="gap:34px">
+        <div class="item"><div class="num">01</div><h3>Rekeyed</h3><p>Documents to Excel, by hand, for every deal. Audited accounts, management numbers, data room exports, all transcribed again.</p></div>
+        <div class="item"><div class="num">02</div><h3>Reconciled</h3><p>Formats, periods and restatements fought into one view. A prior year that changed in a later set of accounts is found late, if at all.</p></div>
+        <div class="item"><div class="num">03</div><h3>Revisited</h3><p>The same source documents reopened at every stage: the model, the IM, the IC paper, due diligence. Each pass starts from the PDF.</p></div>
+      </div>
+      <div>
+        <div class="photo"><img src="img/night.jpg" alt="Analysts at their screens late in the evening"></div>
+        <div class="consequence"><span class="label">The consequence</span><p>The partner's judgement, the firm's most valuable asset, waits at the end of the queue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="what">
+  <div class="wrap">
+    <span class="label">What Anlyst is</span>
+    <h2 style="margin-top:14px">Anlyst is the <em>intelligence and memory layer</em> for deal work.</h2>
+    <div class="split" style="align-items:center">
+      <div class="stack" style="gap:30px">
+        <div class="item"><div class="num">01</div><h3>Document Intelligence</h3><p>Every deal document read once. Facts extracted, normalised and cross checked into a single source of truth for the deal, with the kickoff report and the question list built from it.</p></div>
+        <div class="item"><div class="num">02</div><h3>Market Intelligence</h3><p>Meeting briefs, the firm's relationship map and scored target lists, built from the firm's own records and the market.</p></div>
+        <div class="item"><div class="num">03</div><h3>Transaction Intelligence</h3><p>Materials, outreach, the data room and diligence Q&amp;A, every work product inheriting the same verified facts through to close.</p></div>
+      </div>
+      <div class="venn" aria-label="Three overlapping circles: Document, Market and Transaction Intelligence, with Anlyst at the centre">
+        <div class="c c1">Document<br>Intelligence</div>
+        <div class="c c2">Transaction<br>Intelligence</div>
+        <div class="c c3">Market<br>Intelligence</div>
+        <div class="pill"><img src="img/logo-dark.png" alt="Anlyst"></div>
+      </div>
+    </div>
+    <div class="bottom"><span class="label">In one sentence</span><p>Ingest once. Every work product inherits the same verified facts, and the firm keeps everything it learns.</p></div>
+  </div>
+</section>
+
+<section id="changes">
+  <div class="wrap">
+    <span class="label">What changes</span>
+    <h2 style="margin-top:14px">In market sooner. <em>Closed sooner.</em></h2>
+    <p class="sub" style="margin-top:16px">What changes for your day, your deal and your year.</p>
+    <div class="cards">
+      <div class="card"><h3>Your day</h3><p>The brief on your calendar, meeting prep that knows who you already know, an answer with its source.</p><span class="label tag">A head start.</span></div>
+      <div class="card"><h3>Your deal</h3><p>The first week in a day, then materials, target lists and diligence from the same verified facts.</p><span class="label tag">Weeks back.</span></div>
+      <div class="card plum"><h3>Your year</h3><p>A firm that remembers. Every deal makes the next one start warmer.</p><span class="label tag">More mandates. Same team.</span></div>
+    </div>
+    <div class="bottom"><span class="label">The result</span><p>Your day changes first. Your year changes most.</p></div>
+  </div>
+</section>
+
+
+<section id="lifecycle">
+  <div class="wrap">
+    <span class="label">The lifecycle of a deal</span>
+    <h2 style="margin-top:14px">One deal, start to close. <em>Less work at every stage.</em></h2>
+    <p class="sub" style="margin-top:16px">The curve is the team's hours, week by week, through a mandate. The shaded area is the work Anlyst removes. Filled dots are automated, open dots simplified.</p>
+    <div class="life">
+      <svg viewBox="0 -34 1000 290" role="img" aria-label="Team hours week by week through a mandate, with and without Anlyst. The shaded area between the two curves is the work Anlyst removes; the peak in preparation falls from a week to a day.">
+  <path d="M0.0,219.1 L4.8,218.8 L10.9,218.5 L18.1,218.1 L26.2,217.6 L35.0,217.1 L44.2,216.6 L53.5,216.1 L62.7,215.6 L71.6,215.1 L80.0,214.6 L88.1,214.2 L96.5,213.7 L105.0,213.3 L113.5,212.9 L122.0,212.5 L130.3,212.0 L138.4,211.6 L146.0,211.1 L153.3,210.6 L160.0,210.1 L166.1,209.7 L171.8,209.4 L177.0,209.1 L181.9,208.9 L186.5,208.5 L190.9,208.1 L195.2,207.6 L199.4,207.2 L203.7,206.8 L208.0,206.2 L212.3,205.1 L216.4,203.5 L220.3,201.2 L224.2,198.5 L228.0,195.4 L231.8,192.5 L235.7,189.8 L239.6,187.4 L243.7,185.5 L248.0,184.4 L252.6,184.0 L257.5,184.2 L262.6,185.1 L267.8,186.3 L273.0,187.7 L278.1,189.1 L283.1,190.5 L287.8,191.6 L292.1,192.2 L296.0,192.3 L299.3,192.1 L302.1,191.9 L304.6,191.6 L306.8,191.7 L308.7,192.1 L310.7,192.6 L312.7,193.3 L314.8,194.1 L317.2,195.4 L320.0,197.3 L323.1,199.6 L326.4,201.8 L329.8,203.7 L333.3,204.2 L337.0,201.9 L340.7,198.7 L344.5,195.6 L348.4,192.9 L352.2,190.7 L356.0,189.1 L359.9,188.1 L363.8,187.5 L367.8,187.2 L371.9,187.2 L376.0,187.5 L380.1,188.0 L384.2,188.7 L388.2,189.5 L392.1,190.3 L396.0,191.2 L399.7,192.3 L403.3,193.6 L406.7,195.2 L410.1,196.5 L413.5,196.0 L416.9,194.2 L420.4,191.4 L424.1,187.9 L427.9,184.1 L432.0,180.0 L436.2,176.6 L440.3,174.6 L444.5,174.2 L448.8,175.8 L453.2,178.1 L457.9,180.2 L462.9,182.2 L468.2,184.0 L473.8,185.6 L480.0,187.0 L486.7,188.2 L494.1,189.2 L501.9,190.1 L510.1,190.7 L518.5,191.2 L527.0,191.6 L535.6,191.8 L544.0,191.9 L552.2,191.9 L560.0,191.8 L567.7,191.6 L575.4,191.3 L583.2,190.8 L590.9,190.1 L598.5,189.4 L605.9,188.6 L613.0,187.7 L619.8,186.7 L626.1,185.7 L632.0,184.6 L637.1,183.5 L641.3,182.4 L644.8,181.2 L648.0,179.9 L651.0,178.8 L654.1,178.1 L657.5,177.8 L661.4,178.1 L666.2,179.2 L672.0,181.0 L678.9,182.9 L686.5,183.1 L694.9,180.9 L703.7,178.5 L713.0,176.2 L722.5,173.8 L732.1,171.6 L741.6,169.7 L751.0,168.0 L760.0,166.8 L768.9,165.9 L777.9,165.2 L786.9,164.7 L796.0,164.4 L805.0,164.4 L814.0,164.5 L822.8,164.8 L831.4,165.3 L839.8,165.9 L848.0,166.8 L855.9,167.8 L863.7,169.1 L871.3,170.6 L878.7,172.3 L886.0,174.2 L893.1,176.2 L900.1,178.3 L906.9,180.5 L913.5,182.8 L920.0,185.1 L926.4,187.5 L932.7,190.0 L939.0,192.7 L945.1,195.5 L951.0,198.3 L956.7,201.2 L962.1,204.0 L967.1,205.4 L971.8,206.2 L976.0,206.9 L979.8,208.2 L983.2,210.4 L986.3,213.2 L989.1,216.7 L991.5,220.5 L993.7,224.4 L995.6,228.2 L997.2,231.7 L998.7,234.7 L1000.0,237.1 L1000.0,237.1 L1000,240 L0,240 Z" fill="#C9CDBA" opacity=".55"/>
+  <path d="M0.0,206.3 L4.8,205.8 L10.9,205.3 L18.1,204.6 L26.2,203.9 L35.0,203.1 L44.2,202.3 L53.5,201.4 L62.7,200.6 L71.6,199.8 L80.0,199.0 L88.1,198.3 L96.5,197.6 L105.0,197.0 L113.5,196.3 L122.0,195.6 L130.3,194.9 L138.4,194.2 L146.0,193.4 L153.3,192.6 L160.0,191.8 L166.1,191.1 L171.8,190.6 L177.0,190.2 L181.9,189.8 L186.5,189.3 L190.9,188.6 L195.2,187.6 L199.4,186.3 L203.7,184.5 L208.0,182.2 L212.3,179.0 L216.4,174.7 L220.3,169.8 L224.2,164.5 L228.0,159.0 L231.8,153.6 L235.7,148.6 L239.6,144.3 L243.7,141.0 L248.0,138.8 L252.6,138.1 L257.5,138.6 L262.6,140.1 L267.8,142.3 L273.0,144.8 L278.1,147.5 L283.1,150.0 L287.8,151.9 L292.1,153.1 L296.0,153.3 L299.3,152.9 L302.1,152.5 L304.6,151.9 L306.8,151.0 L308.7,149.7 L310.7,147.6 L312.7,144.7 L314.8,140.8 L317.2,135.7 L320.0,129.2 L323.1,120.5 L326.4,109.2 L329.8,96.0 L333.3,81.7 L337.0,66.9 L340.7,52.2 L344.5,38.3 L348.4,26.0 L352.2,15.9 L356.0,8.7 L359.9,4.2 L363.8,1.3 L367.8,0.1 L371.9,0.2 L376.0,1.5 L380.1,3.8 L384.2,6.8 L388.2,10.4 L392.1,14.3 L396.0,18.4 L399.7,23.2 L403.3,29.3 L406.7,36.4 L410.1,44.2 L413.5,52.4 L416.9,60.8 L420.4,69.1 L424.1,77.0 L427.9,84.3 L432.0,90.6 L436.2,96.3 L440.3,101.7 L444.5,106.8 L448.8,111.7 L453.2,116.2 L457.9,120.5 L462.9,124.4 L468.2,128.0 L473.8,131.2 L480.0,134.0 L486.7,136.4 L494.1,138.5 L501.9,140.1 L510.1,141.4 L518.5,142.4 L527.0,143.1 L535.6,143.6 L544.0,143.8 L552.2,143.8 L560.0,143.6 L567.7,143.2 L575.4,142.5 L583.2,141.5 L590.9,140.3 L598.5,138.8 L605.9,137.2 L613.0,135.3 L619.8,133.4 L626.1,131.3 L632.0,129.2 L637.1,127.0 L641.3,124.7 L644.8,122.3 L648.0,119.8 L651.0,117.1 L654.1,114.3 L657.5,111.2 L661.4,107.8 L666.2,104.2 L672.0,100.3 L678.9,95.7 L686.5,90.4 L694.9,84.5 L703.7,78.3 L713.0,72.0 L722.5,65.8 L732.1,60.0 L741.6,54.9 L751.0,50.5 L760.0,47.3 L768.9,44.9 L777.9,43.1 L786.9,41.9 L796.0,41.2 L805.0,41.0 L814.0,41.3 L822.8,42.1 L831.4,43.4 L839.8,45.1 L848.0,47.3 L855.9,50.0 L863.7,53.4 L871.3,57.4 L878.7,61.9 L886.0,66.9 L893.1,72.1 L900.1,77.7 L906.9,83.5 L913.5,89.5 L920.0,95.5 L926.4,101.7 L932.7,108.5 L939.0,115.5 L945.1,122.9 L951.0,130.4 L956.7,138.0 L962.1,145.6 L967.1,153.2 L971.8,160.6 L976.0,167.7 L979.8,175.0 L983.2,182.6 L986.3,190.4 L989.1,198.3 L991.5,206.0 L993.7,213.3 L995.6,220.1 L997.2,226.1 L998.7,231.2 L1000.0,235.2 L1000.0,235.2 L1000.0,237.1 L998.7,234.7 L997.2,231.7 L995.6,228.2 L993.7,224.4 L991.5,220.5 L989.1,216.7 L986.3,213.2 L983.2,210.4 L979.8,208.2 L976.0,206.9 L971.8,206.2 L967.1,205.4 L962.1,204.0 L956.7,201.2 L951.0,198.3 L945.1,195.5 L939.0,192.7 L932.7,190.0 L926.4,187.5 L920.0,185.1 L913.5,182.8 L906.9,180.5 L900.1,178.3 L893.1,176.2 L886.0,174.2 L878.7,172.3 L871.3,170.6 L863.7,169.1 L855.9,167.8 L848.0,166.8 L839.8,165.9 L831.4,165.3 L822.8,164.8 L814.0,164.5 L805.0,164.4 L796.0,164.4 L786.9,164.7 L777.9,165.2 L768.9,165.9 L760.0,166.8 L751.0,168.0 L741.6,169.7 L732.1,171.6 L722.5,173.8 L713.0,176.2 L703.7,178.5 L694.9,180.9 L686.5,183.1 L678.9,182.9 L672.0,181.0 L666.2,179.2 L661.4,178.1 L657.5,177.8 L654.1,178.1 L651.0,178.8 L648.0,179.9 L644.8,181.2 L641.3,182.4 L637.1,183.5 L632.0,184.6 L626.1,185.7 L619.8,186.7 L613.0,187.7 L605.9,188.6 L598.5,189.4 L590.9,190.1 L583.2,190.8 L575.4,191.3 L567.7,191.6 L560.0,191.8 L552.2,191.9 L544.0,191.9 L535.6,191.8 L527.0,191.6 L518.5,191.2 L510.1,190.7 L501.9,190.1 L494.1,189.2 L486.7,188.2 L480.0,187.0 L473.8,185.6 L468.2,184.0 L462.9,182.2 L457.9,180.2 L453.2,178.1 L448.8,175.8 L444.5,174.2 L440.3,174.6 L436.2,176.6 L432.0,180.0 L427.9,184.1 L424.1,187.9 L420.4,191.4 L416.9,194.2 L413.5,196.0 L410.1,196.5 L406.7,195.2 L403.3,193.6 L399.7,192.3 L396.0,191.2 L392.1,190.3 L388.2,189.5 L384.2,188.7 L380.1,188.0 L376.0,187.5 L371.9,187.2 L367.8,187.2 L363.8,187.5 L359.9,188.1 L356.0,189.1 L352.2,190.7 L348.4,192.9 L344.5,195.6 L340.7,198.7 L337.0,201.9 L333.3,204.2 L329.8,203.7 L326.4,201.8 L323.1,199.6 L320.0,197.3 L317.2,195.4 L314.8,194.1 L312.7,193.3 L310.7,192.6 L308.7,192.1 L306.8,191.7 L304.6,191.6 L302.1,191.9 L299.3,192.1 L296.0,192.3 L292.1,192.2 L287.8,191.6 L283.1,190.5 L278.1,189.1 L273.0,187.7 L267.8,186.3 L262.6,185.1 L257.5,184.2 L252.6,184.0 L248.0,184.4 L243.7,185.5 L239.6,187.4 L235.7,189.8 L231.8,192.5 L228.0,195.4 L224.2,198.5 L220.3,201.2 L216.4,203.5 L212.3,205.1 L208.0,206.2 L203.7,206.8 L199.4,207.2 L195.2,207.6 L190.9,208.1 L186.5,208.5 L181.9,208.9 L177.0,209.1 L171.8,209.4 L166.1,209.7 L160.0,210.1 L153.3,210.6 L146.0,211.1 L138.4,211.6 L130.3,212.0 L122.0,212.5 L113.5,212.9 L105.0,213.3 L96.5,213.7 L88.1,214.2 L80.0,214.6 L71.6,215.1 L62.7,215.6 L53.5,216.1 L44.2,216.6 L35.0,217.1 L26.2,217.6 L18.1,218.1 L10.9,218.5 L4.8,218.8 L0.0,219.1 Z" fill="#B995A0" opacity=".75"/>
+  <line x1="208.0" y1="-34" x2="208.0" y2="240" stroke="#D5D9C6" stroke-width="1"/><line x1="320.0" y1="-34" x2="320.0" y2="240" stroke="#D5D9C6" stroke-width="1"/><line x1="431.7" y1="-34" x2="431.7" y2="240" stroke="#D5D9C6" stroke-width="1"/><line x1="664.0" y1="-34" x2="664.0" y2="240" stroke="#D5D9C6" stroke-width="1"/>
+  <path d="M0.0,219.1 L4.8,218.8 L10.9,218.5 L18.1,218.1 L26.2,217.6 L35.0,217.1 L44.2,216.6 L53.5,216.1 L62.7,215.6 L71.6,215.1 L80.0,214.6 L88.1,214.2 L96.5,213.7 L105.0,213.3 L113.5,212.9 L122.0,212.5 L130.3,212.0 L138.4,211.6 L146.0,211.1 L153.3,210.6 L160.0,210.1 L166.1,209.7 L171.8,209.4 L177.0,209.1 L181.9,208.9 L186.5,208.5 L190.9,208.1 L195.2,207.6 L199.4,207.2 L203.7,206.8 L208.0,206.2 L212.3,205.1 L216.4,203.5 L220.3,201.2 L224.2,198.5 L228.0,195.4 L231.8,192.5 L235.7,189.8 L239.6,187.4 L243.7,185.5 L248.0,184.4 L252.6,184.0 L257.5,184.2 L262.6,185.1 L267.8,186.3 L273.0,187.7 L278.1,189.1 L283.1,190.5 L287.8,191.6 L292.1,192.2 L296.0,192.3 L299.3,192.1 L302.1,191.9 L304.6,191.6 L306.8,191.7 L308.7,192.1 L310.7,192.6 L312.7,193.3 L314.8,194.1 L317.2,195.4 L320.0,197.3 L323.1,199.6 L326.4,201.8 L329.8,203.7 L333.3,204.2 L337.0,201.9 L340.7,198.7 L344.5,195.6 L348.4,192.9 L352.2,190.7 L356.0,189.1 L359.9,188.1 L363.8,187.5 L367.8,187.2 L371.9,187.2 L376.0,187.5 L380.1,188.0 L384.2,188.7 L388.2,189.5 L392.1,190.3 L396.0,191.2 L399.7,192.3 L403.3,193.6 L406.7,195.2 L410.1,196.5 L413.5,196.0 L416.9,194.2 L420.4,191.4 L424.1,187.9 L427.9,184.1 L432.0,180.0 L436.2,176.6 L440.3,174.6 L444.5,174.2 L448.8,175.8 L453.2,178.1 L457.9,180.2 L462.9,182.2 L468.2,184.0 L473.8,185.6 L480.0,187.0 L486.7,188.2 L494.1,189.2 L501.9,190.1 L510.1,190.7 L518.5,191.2 L527.0,191.6 L535.6,191.8 L544.0,191.9 L552.2,191.9 L560.0,191.8 L567.7,191.6 L575.4,191.3 L583.2,190.8 L590.9,190.1 L598.5,189.4 L605.9,188.6 L613.0,187.7 L619.8,186.7 L626.1,185.7 L632.0,184.6 L637.1,183.5 L641.3,182.4 L644.8,181.2 L648.0,179.9 L651.0,178.8 L654.1,178.1 L657.5,177.8 L661.4,178.1 L666.2,179.2 L672.0,181.0 L678.9,182.9 L686.5,183.1 L694.9,180.9 L703.7,178.5 L713.0,176.2 L722.5,173.8 L732.1,171.6 L741.6,169.7 L751.0,168.0 L760.0,166.8 L768.9,165.9 L777.9,165.2 L786.9,164.7 L796.0,164.4 L805.0,164.4 L814.0,164.5 L822.8,164.8 L831.4,165.3 L839.8,165.9 L848.0,166.8 L855.9,167.8 L863.7,169.1 L871.3,170.6 L878.7,172.3 L886.0,174.2 L893.1,176.2 L900.1,178.3 L906.9,180.5 L913.5,182.8 L920.0,185.1 L926.4,187.5 L932.7,190.0 L939.0,192.7 L945.1,195.5 L951.0,198.3 L956.7,201.2 L962.1,204.0 L967.1,205.4 L971.8,206.2 L976.0,206.9 L979.8,208.2 L983.2,210.4 L986.3,213.2 L989.1,216.7 L991.5,220.5 L993.7,224.4 L995.6,228.2 L997.2,231.7 L998.7,234.7 L1000.0,237.1 L1000.0,237.1" fill="none" stroke="#6E3F4F" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <path d="M0.0,206.3 L4.8,205.8 L10.9,205.3 L18.1,204.6 L26.2,203.9 L35.0,203.1 L44.2,202.3 L53.5,201.4 L62.7,200.6 L71.6,199.8 L80.0,199.0 L88.1,198.3 L96.5,197.6 L105.0,197.0 L113.5,196.3 L122.0,195.6 L130.3,194.9 L138.4,194.2 L146.0,193.4 L153.3,192.6 L160.0,191.8 L166.1,191.1 L171.8,190.6 L177.0,190.2 L181.9,189.8 L186.5,189.3 L190.9,188.6 L195.2,187.6 L199.4,186.3 L203.7,184.5 L208.0,182.2 L212.3,179.0 L216.4,174.7 L220.3,169.8 L224.2,164.5 L228.0,159.0 L231.8,153.6 L235.7,148.6 L239.6,144.3 L243.7,141.0 L248.0,138.8 L252.6,138.1 L257.5,138.6 L262.6,140.1 L267.8,142.3 L273.0,144.8 L278.1,147.5 L283.1,150.0 L287.8,151.9 L292.1,153.1 L296.0,153.3 L299.3,152.9 L302.1,152.5 L304.6,151.9 L306.8,151.0 L308.7,149.7 L310.7,147.6 L312.7,144.7 L314.8,140.8 L317.2,135.7 L320.0,129.2 L323.1,120.5 L326.4,109.2 L329.8,96.0 L333.3,81.7 L337.0,66.9 L340.7,52.2 L344.5,38.3 L348.4,26.0 L352.2,15.9 L356.0,8.7 L359.9,4.2 L363.8,1.3 L367.8,0.1 L371.9,0.2 L376.0,1.5 L380.1,3.8 L384.2,6.8 L388.2,10.4 L392.1,14.3 L396.0,18.4 L399.7,23.2 L403.3,29.3 L406.7,36.4 L410.1,44.2 L413.5,52.4 L416.9,60.8 L420.4,69.1 L424.1,77.0 L427.9,84.3 L432.0,90.6 L436.2,96.3 L440.3,101.7 L444.5,106.8 L448.8,111.7 L453.2,116.2 L457.9,120.5 L462.9,124.4 L468.2,128.0 L473.8,131.2 L480.0,134.0 L486.7,136.4 L494.1,138.5 L501.9,140.1 L510.1,141.4 L518.5,142.4 L527.0,143.1 L535.6,143.6 L544.0,143.8 L552.2,143.8 L560.0,143.6 L567.7,143.2 L575.4,142.5 L583.2,141.5 L590.9,140.3 L598.5,138.8 L605.9,137.2 L613.0,135.3 L619.8,133.4 L626.1,131.3 L632.0,129.2 L637.1,127.0 L641.3,124.7 L644.8,122.3 L648.0,119.8 L651.0,117.1 L654.1,114.3 L657.5,111.2 L661.4,107.8 L666.2,104.2 L672.0,100.3 L678.9,95.7 L686.5,90.4 L694.9,84.5 L703.7,78.3 L713.0,72.0 L722.5,65.8 L732.1,60.0 L741.6,54.9 L751.0,50.5 L760.0,47.3 L768.9,44.9 L777.9,43.1 L786.9,41.9 L796.0,41.2 L805.0,41.0 L814.0,41.3 L822.8,42.1 L831.4,43.4 L839.8,45.1 L848.0,47.3 L855.9,50.0 L863.7,53.4 L871.3,57.4 L878.7,61.9 L886.0,66.9 L893.1,72.1 L900.1,77.7 L906.9,83.5 L913.5,89.5 L920.0,95.5 L926.4,101.7 L932.7,108.5 L939.0,115.5 L945.1,122.9 L951.0,130.4 L956.7,138.0 L962.1,145.6 L967.1,153.2 L971.8,160.6 L976.0,167.7 L979.8,175.0 L983.2,182.6 L986.3,190.4 L989.1,198.3 L991.5,206.0 L993.7,213.3 L995.6,220.1 L997.2,226.1 L998.7,231.2 L1000.0,235.2 L1000.0,235.2" fill="none" stroke="#353638" stroke-width="2"/>
+  <line x1="0" y1="240" x2="1000" y2="240" stroke="#6B6C6E" stroke-width="1"/>
+  <circle cx="45.8" cy="202.1" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="114.4" cy="196.3" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="176.8" cy="190.2" r="5.5" fill="#EDF0DF" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="241.6" cy="142.5" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="288.6" cy="152.3" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="346.0" cy="32.0" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="377.2" cy="2.0" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="408.4" cy="40.2" r="5.5" fill="#EDF0DF" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="484.0" cy="135.3" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="592.0" cy="139.9" r="5.5" fill="#EDF0DF" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="764.8" cy="46.0" r="5.5" fill="#6E3F4F" stroke="#6E3F4F" stroke-width="1.5"/><circle cx="932.8" cy="108.5" r="5.5" fill="#EDF0DF" stroke="#6E3F4F" stroke-width="1.5"/>
+  <g class="tg" font-family="Mozilla Headline, Arial Narrow, sans-serif" font-weight="700" font-size="11" letter-spacing=".08em">
+    <text x="12" y="-18" fill="#6E3F4F">TEAM HOURS, WEEK BY WEEK</text>
+    <text x="778" y="4" fill="#353638">WITHOUT ANLYST</text>
+    <text x="778" y="182" fill="#6E3F4F">WITH ANLYST</text>
+  </g>
+  <g class="pl"><line x1="387" y1="14" x2="387" y2="186" stroke="#6E3F4F" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/></g>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1,1 L9,5 L1,9 Z" fill="#6E3F4F"/></marker></defs>
+  <g class="pl"><rect x="340" y="84" width="94" height="30" rx="15" fill="#6E3F4F"/>
+  <text x="387" y="96" text-anchor="middle" fill="#fff" font-family="Mozilla Headline, Arial Narrow, sans-serif" font-weight="700" font-size="9.5">A week of rekeying,</text>
+  <text x="387" y="107" text-anchor="middle" fill="#fff" font-family="Mozilla Headline, Arial Narrow, sans-serif" font-weight="700" font-size="9.5">done in a day</text></g>
+</svg>
+      <div class="stages">
+        <div><div class="num">01</div><h3>Business development</h3><p class="t">Months</p><ul><li>Meeting prep from the relationship map</li><li>Scored sourcing lists</li><li class="s">Every meeting written back to firm memory</li></ul></div>
+        <div><div class="num">02</div><h3>Pre-mandate</h3><p class="t">1 to 2 weeks. <b>With Anlyst: days.</b></p><ul><li>NDA and document request list</li><li>KYC financials ingested before the proposal</li></ul></div>
+        <div><div class="num">03</div><h3>Preparation</h3><p class="t">2 to 4 weeks. <b>With Anlyst: 1 to 2 weeks.</b></p><ul><li>Kickoff report, Q&amp;A</li><li>Data pack, customer analysis</li><li class="s">Teaser and IM on firm templates</li></ul></div>
+        <div><div class="num">04</div><h3>In market</h3><p class="t">6 to 12 weeks. <b>The buyers set the pace.</b></p><ul><li>Scored buyer list, warm paths, outreach drafts</li><li class="s">Reply and activity tracking</li></ul></div>
+        <div><div class="num">05</div><h3>Diligence and close</h3><p class="t">8 to 12 weeks. <b>Counterparties set the pace.</b></p><ul><li>Data room populated, Q&amp;A answered with citations</li><li class="s">Close and archive</li></ul></div>
+      </div>
+      <div class="daily"><b>Every working day</b> My Day, meeting prep and Ask Anlyst, inside the assistant you already use. The lifecycle above sits on top of this.</div>
+    </div>
+    <div class="bottom"><span class="label">The difference</span><p>In market sooner, closed sooner. Hours come out of every stage, weeks come out of the ones you control. The same team runs more deals.</p></div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <span class="label">The day after a deal arrives</span>
+    <h2 style="margin-top:14px">First internal review meeting in <em>six to twelve hours</em>, not five to seven days.</h2>
+    <p class="sub" style="margin-top:16px">The first week of every deal, done in a day. This runs today on live mandates.</p>
+    <div class="proof">
+      <div class="col">
+        <span class="label">Without Anlyst</span>
+        <ol><li><b>01</b>Manual document review</li><li><b>02</b>Data transposition to Excel</li><li><b>03</b>Format and period reconciliation</li><li><b>04</b>First pass question list by hand</li></ol>
+        <div class="result">First internal review meeting: 5 to 7 days</div>
+      </div>
+      <div class="col plum">
+        <span class="label white">With Anlyst</span>
+        <ol><li><b>01</b>Automated document ingestion</li><li><b>02</b>Extracted and normalised financials</li><li><b>03</b>Consistency checks and anomaly flags</li><li><b>04</b>First pass question list generated</li></ol>
+        <div class="result">First internal review meeting: 6 to 12 hours</div>
+      </div>
+      <div class="photo" style="aspect-ratio:auto;min-height:280px"><img src="img/boardroom.jpg" alt="A deal team reviewing the kickoff report on screen"></div>
+    </div>
+    <div class="bottom"><span class="label">Ingest once, benefit at every stage</span><p>Traditional model: revisit the source documents at every stage. Anlyst: the facts travel.</p></div>
+  </div>
+</section>
+
+<section class="dark" id="daily">
+  <div class="wrap">
+    <span class="label">Every working day</span>
+    <h2 style="margin-top:14px">Keep using Claude. <em>Now it knows the deal.</em></h2>
+    <p class="sub" style="margin-top:16px">A general AI assistant is a brilliant intern on a three month rotation. Every deal, you start by teaching it the firm again. A partner ran a live mandate through a general AI assistant: 37 files, six agents, weeks of work done in hours. It drafted well. It could not hold the deal, or meet an NDA that bars public AI processing.</p>
+    <div class="three">
+      <div class="item"><div class="num">01</div><h3>My Day</h3><p>One screen each morning: today's meetings with their briefs, what changed overnight, and what needs you.</p></div>
+      <div class="item"><div class="num">02</div><h3>Meeting prep</h3><p>Every brief knows who you already know: the firm's history with the people in the room, who at the firm knows them, what was said last time, and the market view.</p></div>
+      <div class="item"><div class="num">03</div><h3>In your assistant</h3><p>Anlyst connects to Claude on your phone and your desktop. Ask for the brief thirty minutes before the meeting. Save the note after it.</p></div>
+    </div>
+    <div class="bottom"><span class="label">The boundary</span><p>Not a general assistant with a deal prompt. The engagement is a persistent object: facts with provenance, questions with answers, versions with deltas. The assistant sees the facts you ask for, never the documents.</p></div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <span class="label">Trust by design</span>
+    <h2 style="margin-top:14px">Every fact carries <em>its source, its period and its status.</em></h2>
+    <div class="rows">
+      <div><b>01</b><h3>Source</h3><p>Document and page, attached to every figure, always one click from the original.</p></div>
+      <div><b>02</b><h3>Basis</h3><p>Audited, management, restated or forecast. The basis travels with the number and is never mixed silently.</p></div>
+      <div><b>03</b><h3>Computation</h3><p>Ratios, growth rates and cross foots are calculated in code, never by the model, and checked against the source statements.</p></div>
+      <div><b>04</b><h3>Anomalies</h3><p>Flagged and written up as the question list for the first management call, never smoothed over.</p></div>
+      <div><b>05</b><h3>Nothing assumed</h3><p>A legal name, a currency, a jurisdiction, a scale: each is taken from a source that states it, or left absent and raised as a question. Never defaulted, never inferred from a filename or a letterhead. The legal name comes only from a company registry extract.</p></div>
+      <div><b>06</b><h3>Isolation</h3><p>Each firm's data is walled off from every other firm's. Documents go to a model only when the deal is authorised for it, every call is logged, and nothing trains a shared model. Deal and firm memory belong to the firm.</p></div>
+    </div>
+    <div class="bottom"><span class="label">The principle</span><p>An AI suggestion never quietly becomes a deal fact.</p></div>
+  </div>
+</section>
+
+<section id="where">
+  <div class="wrap">
+    <span class="label">Where we are</span>
+    <h2 style="margin-top:14px"><em>Live on real mandates</em> today. V1 in build: the pilot firm on the daily loop in December, the full platform by February 2027.</h2>
+    <div class="timeline">
+      <div><div class="dot on"></div><h3>Now</h3><ul><li>Ingestion and the kickoff report running on live deals.</li><li>V1 in build since the end of October 2026: triage, the kickoff pass, report versions and country libraries for eight jurisdictions built in the first week.</li><li>Developed inside Modus Partners, spun out in 2026.</li></ul></div>
+      <div><div class="dot"></div><h3>December 2026 to February 2027</h3><ul><li>The pilot firm on the daily loop: My Day, the morning brief, meeting prep, and the connector for Claude.</li><li>Then ingestion on Anlyst Private Cloud, materials, outreach, the data room and diligence.</li></ul></div>
+      <div><div class="dot"></div><h3>2027</h3><ul><li>Five design partner firms signed by the end of 2026, live from March 2027.</li><li>The clause register: shareholders’ agreements, facility agreements and material contracts read as the accounts are.</li><li>Investment funds and corporate development follow.</li></ul></div>
+    </div>
+    <div class="bottom"><span class="label">Who we serve</span><p>Sell-side boutiques first, investment funds and corporate development teams next. The middle of the market, globally.</p></div>
+  </div>
+</section>
+
+<section class="dark" id="whitepaper">
+  <div class="wrap">
+    <span class="label">Whitepaper</span>
+    <h2 style="margin-top:14px">Frontier cloud AI or local models? <em>A framework for deal work.</em></h2>
+    <div class="paper">
+      <div class="cover">
+        <div><small>Modus Partners and Anlyst Global Intelligence</small><div class="t" style="margin-top:14px">Frontier Cloud AI vs. Local LLMs: A Q2 2026 Strategic Framework</div></div>
+        <small>PDF. Free on registration.</small>
+      </div>
+      <form id="wpForm" class="hsform" data-form="whitepaper" novalidate>
+        <p class="sub" style="color:var(--muted)">Where client documents may go, what each route costs, and how an advisory firm decides. Register and the download opens.</p>
+        <div class="f2">
+          <label for="wp-first">First name<input id="wp-first" name="firstname" required autocomplete="given-name"></label>
+          <label for="wp-last">Last name<input id="wp-last" name="lastname" required autocomplete="family-name"></label>
+        </div>
+        <label for="wp-email">Work email<input id="wp-email" name="email" type="email" required autocomplete="email"></label>
+        <div class="f2">
+          <label for="wp-firm">Firm<input id="wp-firm" name="company" required autocomplete="organization"></label>
+          <label for="wp-phone">Phone<input id="wp-phone" name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <input type="hidden" name="message" value="Whitepaper download: Frontier Cloud AI vs Local LLMs">
+        <div><button class="btn solid" type="submit">Download the whitepaper</button></div>
+        <p class="note">We keep your details so we can send you the paper and the occasional update. See <a href="#privacy">privacy</a>.</p>
+        <div class="ok" id="wpOk">Thank you. The download has opened in a new tab; if it did not, <a id="wpLink" href="#" target="_blank" rel="noopener">open it here</a>.</div>
+        <div class="ok err" id="wpErr">That did not go through. Email <a href="mailto:m@anlyst.co">m@anlyst.co</a> and we will send the paper by return.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="label">Talk to us</span>
+    <h2 style="margin-top:14px">Five design partner firms by the end of 2026. <em>Live on your own documents within a week.</em></h2>
+    <div class="paper">
+      <div class="stack" style="gap:26px">
+        <div class="item"><h3>Advisory firms</h3><p>Sell-side boutiques on Google Workspace, with a live mandate to run. Week one: connectors authorised, first document set ingested, the kickoff report in your hands.</p></div>
+        <div class="item"><h3>Investors</h3><p>Seed round now, with allocation for investors who will also be customers.</p></div>
+        <div class="item"><h3>Everyone else</h3><p>Funds, corporate development teams, partners and the curious. Tell us a little about you.</p></div>
+        <p class="note">Michael Gethen &nbsp;•&nbsp; m@anlyst.co &nbsp;•&nbsp; Singapore | Sydney</p>
+      </div>
+      <form id="ctForm" class="hsform" data-form="contact" novalidate>
+        <div class="f2">
+          <label for="ct-first">First name<input id="ct-first" name="firstname" required autocomplete="given-name"></label>
+          <label for="ct-last">Last name<input id="ct-last" name="lastname" required autocomplete="family-name"></label>
+        </div>
+        <label for="ct-email">Work email<input id="ct-email" name="email" type="email" required autocomplete="email"></label>
+        <div class="f2">
+          <label for="ct-firm">Firm<input id="ct-firm" name="company" required autocomplete="organization"></label>
+          <label for="ct-phone">Phone<input id="ct-phone" name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label for="ct-type">I am<select id="ct-type" name="_type"><option>At an advisory firm</option><option>An investor</option><option>At a fund or corporate development team</option><option>Something else</option></select></label>
+        <label for="ct-msg">Tell us a little about you<textarea id="ct-msg" name="message" required></textarea></label>
+        <div><button class="btn solid" type="submit">Register</button></div>
+        <p class="note">We keep your details so we can reply. See <a href="#privacy">privacy</a>.</p>
+        <div class="ok" id="ctOk">Thank you. We will be in touch within a working day.</div>
+        <div class="ok err" id="ctErr">That did not go through. Email <a href="mailto:m@anlyst.co">m@anlyst.co</a> instead.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" style="padding-block:56px">
+  <div class="wrap">
+    <span class="label">Privacy</span>
+    <p class="privacy" style="margin-top:14px">The details you enter in the forms on this page reach us by email and are kept in our contact records so that we can send you the whitepaper and reply to your enquiry. We do not sell or share them, and you can ask us to delete them at any time by writing to <a href="mailto:m@anlyst.co">m@anlyst.co</a>. This site sets no advertising cookies.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><img src="img/logo-light.png" alt="Anlyst"><div>Anlyst Global Intelligence Pte Ltd. &nbsp;•&nbsp; Singapore | Sydney &nbsp;•&nbsp; Private and confidential where marked.</div></div>
+    <div class="links"><a href="#whitepaper">Whitepaper</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+// Forms. Two delivery routes, chosen by which ID is set below:
+//  1. FORMSPREE_ID set: each submission is emailed to the address registered with that Formspree form (m@anlyst.co),
+//     with a subject line that says which form it came from. Set it up once at formspree.io, paste the form ID here.
+//  2. FORMSPREE_ID empty: submissions post to HubSpot's Forms API (portal 6334981) and land in the CRM instead.
+const FORMSPREE_ID = "";                                   // e.g. "xyzabcd"
+const HS_PORTAL = "6334981";
+const HS_FORMS = { contact: "ff541b5c-515f-4d8e-95a8-8332db76f86a", whitepaper: "ff541b5c-515f-4d8e-95a8-8332db76f86a" };
+const WHITEPAPER_PDF = "whitepaper/Anlyst-Frontier-Cloud-AI-vs-Local-LLMs.pdf";
+const SUBJECT = { contact: "anlyst.co enquiry", whitepaper: "anlyst.co whitepaper download" };
+const hutk = () => (document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/) || [])[1];
+
+async function deliver(key, fd) {
+  const type = fd.get("_type");
+  if (type) fd.set("message", `[${type}] ${fd.get("message") || ""}`);
+  const entries = [...fd.entries()].filter(([n, v]) => v !== "" && !n.startsWith("_"));
+  if (FORMSPREE_ID) {
+    const body = Object.fromEntries(entries);
+    body._subject = SUBJECT[key]; body._replyto = fd.get("email"); body.form = key;
+    return fetch(`https://formspree.io/f/${FORMSPREE_ID}`, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(body) });
+  }
+  const body = { fields: entries.map(([name, value]) => ({ name, value })), context: { pageUri: location.href, pageName: document.title, hutk: hutk() } };
+  return fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORMS[key]}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+}
+
+document.querySelectorAll("form.hsform").forEach(form => {
+  const key = form.dataset.form, ok = form.querySelector(".ok:not(.err)"), err = form.querySelector(".err"), btn = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    ok.classList.remove("show"); err.classList.remove("show"); btn.disabled = true;
+    try {
+      const r = await deliver(key, new FormData(form));
+      if (!r.ok) throw new Error(await r.text());
+      ok.classList.add("show"); form.querySelectorAll("input,select,textarea").forEach(i => { if (i.type !== "hidden") i.value = ""; });
+      if (key === "whitepaper") { document.getElementById("wpLink").href = WHITEPAPER_PDF; window.open(WHITEPAPER_PDF, "_blank", "noopener"); }
+    } catch (x) { console.warn("form submit failed", x); err.classList.add("show"); }
+    finally { btn.disabled = false; }
+  });
+});
+</script>
+
+</body></html>
