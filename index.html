@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wdth,wght@75,500..700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Anlyst Global Intelligence Pte Ltd","alternateName":"Anlyst","url":"https://www.anlyst.co/","logo":"https://www.anlyst.co/img/logo-dark.png","description":"The intelligence and memory layer for M&A and investment deal work.","email":"m@anlyst.co","foundingLocation":"Singapore","areaServed":"Worldwide","founder":{"@type":"Person","name":"Michael Gethen"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Anlyst Global Intelligence Pte Ltd","alternateName":"Anlyst","url":"https://www.anlyst.co/","logo":"https://www.anlyst.co/img/logo-dark.png","description":"The intelligence and memory layer for M&A and investment deal work.","foundingLocation":"Singapore","areaServed":"Worldwide","founder":{"@type":"Person","name":"Michael Gethen"}}
 </script>
 <style>
 /* Layout: one long page in the deck's rhythm. Cream and dark bands alternate; the hero is the deck cover at full bleed.
@@ -341,7 +341,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
         <div><button class="btn solid" type="submit">Download the whitepaper</button></div>
         <p class="note">We keep your details so we can send you the paper and the occasional update. See <a href="#privacy">privacy</a>.</p>
         <div class="ok" id="wpOk">Thank you. The download has opened in a new tab; if it did not, <a id="wpLink" href="#" target="_blank" rel="noopener">open it here</a>.</div>
-        <div class="ok err" id="wpErr">That did not go through. Email <a href="mailto:m@anlyst.co">m@anlyst.co</a> and we will send the paper by return.</div>
+        <div class="ok err" id="wpErr">That did not go through. Try again in a moment, or <a href="#" class="mail" data-u="hello">write to us</a> and we will send the paper by return.</div>
       </form>
     </div>
   </div>
@@ -356,7 +356,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
         <div class="item"><h3>Advisory firms</h3><p>Sell-side boutiques with a live mandate to run. Within a week of starting, your own documents are ingested and the kickoff report is in your hands.</p></div>
         <div class="item"><h3>Investors and partners</h3><p>We are talking to a small number of investors who will also be customers, and to the platforms deal teams already use.</p></div>
         <div class="item"><h3>Everyone else</h3><p>Funds, corporate development teams and the curious. Tell us a little about you.</p></div>
-        <p class="note">Michael Gethen &nbsp;•&nbsp; m@anlyst.co &nbsp;•&nbsp; Singapore | Sydney</p>
+        <p class="note">Michael Gethen &nbsp;•&nbsp; Singapore | Sydney &nbsp;•&nbsp; <a href="#" class="mail" data-u="hello">Email us</a></p>
       </div>
       <form id="ctForm" class="hsform" data-form="contact" novalidate>
         <div class="f2">
@@ -373,7 +373,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
         <div><button class="btn solid" type="submit">Register</button></div>
         <p class="note">We keep your details so we can reply. See <a href="#privacy">privacy</a>.</p>
         <div class="ok" id="ctOk">Thank you. We will be in touch within a working day.</div>
-        <div class="ok err" id="ctErr">That did not go through. Email <a href="mailto:m@anlyst.co">m@anlyst.co</a> instead.</div>
+        <div class="ok err" id="ctErr">That did not go through. Try again in a moment, or <a href="#" class="mail" data-u="hello">write to us</a> instead.</div>
       </form>
     </div>
   </div>
@@ -382,7 +382,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
 <section id="privacy" style="padding-block:56px">
   <div class="wrap">
     <span class="label">Privacy</span>
-    <p class="privacy" style="margin-top:14px">The details you enter in the forms on this page reach us by email and are kept in our contact records so that we can send you the whitepaper and reply to your enquiry. We do not sell or share them, and you can ask us to delete them at any time by writing to <a href="mailto:m@anlyst.co">m@anlyst.co</a>. This site sets no advertising cookies.</p>
+    <p class="privacy" style="margin-top:14px">The details you enter in the forms on this page reach us by email and are kept in our contact records so that we can send you the whitepaper and reply to your enquiry. We do not sell or share them, and you can ask us to delete them at any time by <a href="#" class="mail" data-u="hello">writing to us</a>. This site sets no advertising cookies.</p>
   </div>
 </section>
 
@@ -395,7 +395,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
 
 <script>
 // Forms. Two delivery routes, chosen by which ID is set below:
-//  1. FORMSPREE_ID set: each submission is emailed to the address registered with that Formspree form (m@anlyst.co),
+//  1. FORMSPREE_ID set: each submission is emailed to the address registered with that Formspree form,
 //     with a subject line that says which form it came from. Set it up once at formspree.io, paste the form ID here.
 //  2. FORMSPREE_ID empty: submissions post to HubSpot's Forms API (portal 6334981) and land in the CRM instead.
 const FORMSPREE_ID = "xeaadjgw";
@@ -418,6 +418,10 @@ async function deliver(key, fd) {
   return fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORMS[key]}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 }
 
+// Email links: the address is assembled on click and never written into the page source.
+document.querySelectorAll("a.mail").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault(); const d = ["anlyst", "co"].join("."); location.href = "mailto:" + a.dataset.u + "@" + d;
+}));
 document.querySelectorAll("form.hsform").forEach(form => {
   const key = form.dataset.form, ok = form.querySelector(".ok:not(.err)"), err = form.querySelector(".err"), btn = form.querySelector("button[type=submit]");
   form.addEventListener("submit", async e => {
