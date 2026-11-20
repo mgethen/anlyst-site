@@ -20,4 +20,5 @@ Built for M&A advisory boutiques and mid-market advisors first, then investment 
 - [Anlyst vs enterprise agent platforms](https://www.anlyst.co/guides/anlyst-vs-enterprise-agent-platforms.html)
 - [Anlyst vs building your own stack](https://www.anlyst.co/guides/anlyst-vs-building-your-own.html)
 - [What the first week of a deal looks like](https://www.anlyst.co/guides/the-first-week-of-a-deal.html)
+- [How to test Anlyst on a real data room](https://www.anlyst.co/guides/how-to-test-anlyst-on-a-real-data-room.html)
 - [Whitepaper: Frontier Cloud AI vs. Local LLMs](https://www.anlyst.co/#whitepaper)
