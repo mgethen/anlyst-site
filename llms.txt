@@ -1,0 +1,23 @@
+# Anlyst
+
+> Anlyst is the intelligence and memory layer for M&A and investment deal work. It reads every deal document once, keeps the verified facts with their sources, and builds every work product from them. In market sooner. Closed sooner.
+
+Built for M&A advisory boutiques and mid-market advisors first, then investment funds and corporate development teams. Made by Anlyst Global Intelligence Pte Ltd, Singapore.
+
+## Named features
+- The Gate: nothing gets into a deal unverified, and nothing is assumed.
+- The Register: every figure, cited to its document and page.
+- Kickoff: what the room holds, and what it means, in a day.
+- Memory: the deal remembers, so the firm does.
+- Who Knows Whom: the firm's relationship map.
+- Materials: decks and reports in the firm's templates, with review built in.
+- Archive: the deal, closed and kept, facts included.
+- The Route: the best model for each job, measured, with the cost known per document.
+
+## Pages
+- [Home](https://www.anlyst.co/): the problem, what Anlyst is, proof and trust.
+- [Anlyst vs a general AI assistant](https://www.anlyst.co/guides/anlyst-vs-a-general-ai-assistant.html)
+- [Anlyst vs enterprise agent platforms](https://www.anlyst.co/guides/anlyst-vs-enterprise-agent-platforms.html)
+- [Anlyst vs building your own stack](https://www.anlyst.co/guides/anlyst-vs-building-your-own.html)
+- [What the first week of a deal looks like](https://www.anlyst.co/guides/the-first-week-of-a-deal.html)
+- [Whitepaper: Frontier Cloud AI vs. Local LLMs](https://www.anlyst.co/#whitepaper)

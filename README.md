@@ -2,7 +2,10 @@
 
 Static site for Anlyst Global Intelligence. One page, no build step.
 
-- `index.html` – the site. Fonts from Google Fonts; everything else inline.
+- `index.html` – the home page. Fonts from Google Fonts; styles inline.
+- `guides/` – the guide pages (`index.html` plus one file per guide) and their stylesheet `guide.css`.
+- `ask.js` – the "Ask an AI" panel on the home page and the guides: the list of assistants and their prefilled prompt links. The prompts themselves are in the `data-prompt` attributes in the HTML.
+- `llms.txt`, `sitemap.xml`, `robots.txt` – for search engines and AI assistants. Add a line to `sitemap.xml` and `llms.txt` when a guide is added.
 - `img/` – hero art, photos, logos. `favicon*.png`, `apple-touch-icon.png`.
 - `whitepaper/Anlyst-Frontier-Cloud-AI-vs-Local-LLMs.pdf` – the whitepaper (name set as `WHITEPAPER_PDF` in `index.html`).
 - `CNAME` – the custom domain for GitHub Pages.

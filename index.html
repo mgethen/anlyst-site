@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Anlyst | The intelligence and memory layer for deal work</title>
-<meta name="description" content="Anlyst reads every deal document once, extracts and verifies the facts, and gives the whole deal team a memory that compounds. Built for M&A advisory firms and investors. Weeks back on every deal, a head start every day.">
+<title>Anlyst | In market sooner. Closed sooner.</title>
+<meta name="description" content="Anlyst reads every deal document once, extracts and verifies the facts, and gives the whole deal team a memory that compounds. Built for M&A advisory firms and investors. In market sooner, closed sooner.">
 <link rel="canonical" href="https://www.anlyst.co/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Anlyst | Weeks back on every deal. A head start every day.">
-<meta property="og:description" content="The intelligence and memory layer for M&A and investment deal work. In market sooner, closed sooner.">
+<meta property="og:title" content="Anlyst | In market sooner. Closed sooner.">
+<meta property="og:description" content="The intelligence and memory layer for M&A and investment deal work. Every deal document read once, every work product built from the same verified facts, and a firm that remembers.">
 <meta property="og:url" content="https://www.anlyst.co/">
 <meta property="og:image" content="https://www.anlyst.co/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anlyst | In market sooner. Closed sooner.">
+<meta name="twitter:description" content="The intelligence and memory layer for M&A and investment deal work.">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -205,6 +207,22 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
 .btn[disabled]{opacity:.6;cursor:progress}
 .privacy{font-size:.95rem;color:var(--ink2);max-width:70ch}
 
+
+/* ask an AI + guides */
+.ask{display:grid;gap:18px;margin-top:40px;max-width:860px}
+.chips,.ask-go{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--head);font-stretch:75%;font-weight:600;font-size:.95rem;letter-spacing:.03em;padding:9px 16px;border-radius:999px;border:1.5px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.ask textarea{min-height:0;font-family:var(--body);font-weight:400;letter-spacing:0;line-height:1.5}
+.ask-go .btn{padding:10px 18px;font-size:.95rem;color:var(--plum)}
+.ask-copy{font:inherit;background:none;border:0;padding:0;color:var(--plum);text-decoration:underline;cursor:pointer}
+.guides{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+@media (max-width:1040px){.guides{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.guides{grid-template-columns:1fr}}
+.guides a{background:var(--white);border-radius:14px;padding:26px;text-decoration:none;display:grid;gap:10px;align-content:start}
+.guides a h3{font-size:1.35rem;color:var(--plum)}
+.guides a p{margin:0;color:var(--ink2);font-size:.97rem}
+.guides a:hover{box-shadow:0 0 0 2px var(--plum)}
 </style>
 </head>
 <body>
@@ -215,6 +233,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
       <a href="#problem">The problem</a>
       <a href="#what">What Anlyst is</a>
       <a href="#proof">Proof</a>
+      <a href="#ask">Ask an AI</a>
+      <a href="guides/">Guides</a>
       <a href="#whitepaper">Whitepaper</a>
       <a class="btn ghost" href="#contact">Talk to us</a>
     </nav>
@@ -317,6 +337,26 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
 
 
 
+<section id="ask">
+  <div class="wrap">
+    <span class="label">Ask an AI</span>
+    <h2 style="margin-top:14px">Do not take our word for it. <em>Ask the assistant you already use.</em></h2>
+    <p class="sub" style="margin-top:16px">Pick a question, change the prompt if you like, and open it in your assistant. It reads these pages and answers in its own words.</p>
+    <div class="ask" data-ask>
+      <div class="chips" role="group" aria-label="Choose a question"><button type="button" class="chip" aria-pressed="true" data-prompt="Read https://www.anlyst.co/ and tell me in plain terms what Anlyst is, who it is built for, and what it changes in the first week of an M&amp;A deal. Cite the pages you used.">What is Anlyst?</button><button type="button" class="chip" aria-pressed="false" data-prompt="Read https://www.anlyst.co/guides/anlyst-vs-a-general-ai-assistant.html and explain how Anlyst differs from using a general AI assistant such as you for M&amp;A deal work. Be critical: where is a general assistant enough, and where is it not? Cite the page.">Anlyst or my AI assistant?</button><button type="button" class="chip" aria-pressed="false" data-prompt="Read https://www.anlyst.co/guides/anlyst-vs-enterprise-agent-platforms.html and compare Anlyst with the enterprise AI agent platforms sold to investment banks. Which suits a boutique advisory firm of fewer than twenty people, and why? Cite the pages you used.">Anlyst or an enterprise platform?</button><button type="button" class="chip" aria-pressed="false" data-prompt="Read https://www.anlyst.co/guides/anlyst-vs-building-your-own.html and tell me what a small M&amp;A advisory firm would have to build and maintain to match Anlyst with its own stack of AI tools. Be critical: when is building our own the better choice? Cite the page.">Anlyst or build our own?</button><button type="button" class="chip" aria-pressed="false" data-prompt="Read https://www.anlyst.co/guides/the-first-week-of-a-deal.html and walk me through the first week of a sell-side mandate with and without Anlyst. Cite the page.">The first week of a deal</button><button type="button" class="chip" aria-pressed="false" data-prompt="I work at [describe your firm: size, sectors, the tools you use]. Read https://www.anlyst.co/ and the guides at https://www.anlyst.co/guides/ and tell me honestly whether Anlyst would suit us, and what I should ask them. Cite the pages you used.">Is it right for my firm?</button></div>
+      <label for="askPrompt">The prompt, yours to edit<textarea id="askPrompt" rows="4" spellcheck="false"></textarea></label>
+      <div class="ask-go" aria-label="Open the prompt in an assistant"></div>
+      <p class="note"><button type="button" class="ask-copy">Copy the prompt</button> Each button opens the assistant in a new tab with the prompt filled in. Nothing is sent from this page.</p>
+    </div>
+    <div class="guides">
+      <a href="guides/anlyst-vs-a-general-ai-assistant.html"><span class="label">Guide</span><h3>Anlyst vs a general AI assistant</h3><p>What a general assistant does well, where it stops, and what changes when it knows the deal.</p></a>
+      <a href="guides/anlyst-vs-enterprise-agent-platforms.html"><span class="label">Guide</span><h3>Anlyst vs enterprise agent platforms</h3><p>Priced for a bank or priced for a boutique: two different products for two different firms.</p></a>
+      <a href="guides/anlyst-vs-building-your-own.html"><span class="label">Guide</span><h3>Anlyst vs building your own stack</h3><p>What a firm has to build, and keep running, to match it with its own AI tools.</p></a>
+      <a href="guides/the-first-week-of-a-deal.html"><span class="label">Guide</span><h3>What the first week of a deal looks like</h3><p>From the client's files arriving to the first internal review meeting, with and without Anlyst.</p></a>
+    </div>
+  </div>
+</section>
+
 <section class="dark" id="whitepaper">
   <div class="wrap">
     <span class="label">Whitepaper</span>
@@ -389,7 +429,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:18px}
 <footer>
   <div class="wrap">
     <div><img src="img/logo-light.png" alt="Anlyst"><div>Anlyst Global Intelligence Pte Ltd. &nbsp;•&nbsp; Singapore | Sydney &nbsp;•&nbsp; Private and confidential where marked.</div></div>
-    <div class="links"><a href="#whitepaper">Whitepaper</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a></div>
+    <div class="links"><a href="guides/">Guides</a><a href="#whitepaper">Whitepaper</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a></div>
   </div>
 </footer>
 
@@ -438,5 +478,6 @@ document.querySelectorAll("form.hsform").forEach(form => {
   });
 });
 </script>
+<script src="ask.js" defer></script>
 
 </body></html>
